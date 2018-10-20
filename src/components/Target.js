@@ -1,9 +1,12 @@
 import React from 'react'
-// import '../App.css'
 
 class Target extends React.Component {
     render() {
-      return <div className="target">{this.props.target}</div>;
+      return <div className="target"
+      style={{ backgroundColor: Game.bgColors[gameStatus] }}>
+      {this.props.target}
+        {this.state.gameStatus === 'new' ? '?' : this.target}
+      </div>;
     }
 }
 
