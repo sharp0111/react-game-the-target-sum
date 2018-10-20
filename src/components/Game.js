@@ -4,7 +4,7 @@ import React from 'react'
 
 import _ from 'lodash'
 import Number from './Number'
-// import Target from './Target'
+import Target from './Target'
 // import Timer from './Timer'
 // import randomNumberBetween from '../helper/Calculate' 
 
@@ -96,12 +96,11 @@ class Game extends React.Component {
     const { gameStatus, remainingSeconds } = this.state;
     return (
       <div className="game">
-        <div
-          className="target"
-          style={{ backgroundColor: Game.bgColors[gameStatus] }}
-        >
+
+        <Target className="target" style={{ backgroundColor: Game.bgColors[gameStatus] }}>
           {gameStatus === 'new' ? '?' : this.target}
-        </div>
+        </Target>
+
         <div className="challenge-numbers">
           {this.challengeNumbers.map((value, index) => (
             <Number
