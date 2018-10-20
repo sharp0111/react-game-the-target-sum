@@ -5,11 +5,11 @@ import React from 'react'
 import _ from 'lodash'
 import Number from './Number'
 import Target from './Target'
-// import Timer from './Timer'
-// import randomNumberBetween from '../helper/Calculate' 
+import Timer from './Timer'
+import randomNumberBetween from '../helper/Calculate' 
 
-const randomNumberBetween = (min, max) =>
-  Math.floor(Math.random() * (max - min + 1)) + min;
+// const randomNumberBetween = (min, max) =>
+//   Math.floor(Math.random() * (max - min + 1)) + min;
 
 class Game extends React.Component {
   static bgColors = {
@@ -116,7 +116,8 @@ class Game extends React.Component {
           {gameStatus === 'new' ? (
             <button onClick={this.startGame}>Start</button>
           ) : (
-            <div className="timer-value">{remainingSeconds}</div>
+            <Timer className="timer-value">{remainingSeconds}</Timer>
+            // <div className="timer-value">{remainingSeconds}</div>
           )}
           {['won', 'lost'].includes(gameStatus) && (
             <button onClick={this.props.onPlayAgain}>Play Again</button>

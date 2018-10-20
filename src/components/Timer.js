@@ -2,7 +2,7 @@ import React from 'react'
 
 class Timer extends React.Component {
     render() {
-      return <div className="timer-value">{this.props.initialSeconds}</div>;
+      return <div className={this.props.className}>{this.props.children}</div>;
     }
 }
 
